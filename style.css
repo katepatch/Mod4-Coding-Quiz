@@ -34,13 +34,14 @@ body {
 .box {
     display: flex;
     width: 600px;
-    max-width: 80%;
+    max-width: 90%;
     height: auto;
     border-radius: 3px;
     padding: 10px;
     box-shadow: 0 0 5px 2px;
     flex-direction: column;
     text-align: center;
+    background-color: white;
 }
 
 #answer-buttons {
@@ -51,6 +52,35 @@ body {
     margin: 10px 0;
 }
 
+.button:hover {
+    border-color: #f77e1b;
+}
+
 .hide {
     display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #f77e1b;
+}
+
+#highscore-submit {
+    justify-content: center;
+
+}
+
+ul {
+    padding: 0px;
+}
+
+ul li {
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 2px;
 }
