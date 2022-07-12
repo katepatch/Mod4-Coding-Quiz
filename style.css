@@ -31,6 +31,25 @@ body {
     margin-left: 200px;
 }
 
+.box {
+    display: flex;
+    width: 600px;
+    max-width: 80%;
+    height: auto;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 0 5px 2px;
+    flex-direction: column;
+    text-align: center;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    padding: 10px;
+    margin: 10px 0;
+}
 
 .hide {
     display: none;
