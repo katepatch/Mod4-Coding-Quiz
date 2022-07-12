@@ -1,3 +1,10 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
 body {
     background-color: #e3a68a;
     height: 100vh;
@@ -5,4 +12,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#container {
+    width: 80vw;
+    max-width: 80%;
+    background-color: white;
+    height: 70vh;
+    box-shadow: 0 0 5px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.hide {
+    display: none;
 }
