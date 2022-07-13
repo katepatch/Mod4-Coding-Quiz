@@ -79,3 +79,16 @@ var myQuestions = [
 
 start.addEventListener("click", startQuiz);
 linkBoard.addEventListener("click", showLeaderboard);
+
+function startQuiz() {
+    countDown = setInterval(timer, 1000);
+    start.classList.add("hide");
+    randomQuestions = myQuestions.sort(() => Math.random() > .5 ? 1 : -1);
+    currentQuestion = 0;
+    quizQuestions.classList.remove("hide");
+    nextQuestion();
+    b1.addEventListener("click", chooseAnswer);
+    b2.addEventListener("click", chooseAnswer);
+    b3.addEventListener("click", chooseAnswer);
+    b4.addEventListener("click", chooseAnswer);
+}
