@@ -136,3 +136,13 @@ function submitHighScore() {
     timeScore.innerHTML = sec;
     submitButton.addEventListener("click", highScoresList);
 }
+
+function timer() {
+    document.getElementById("time-left").innerHTML = sec;
+    sec--;
+    if (sec <= -1) {
+        clearInterval(countDown);
+        alert("Outta Time Bud");
+        showLeaderboard();
+    }
+}
