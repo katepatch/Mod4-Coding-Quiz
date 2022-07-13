@@ -92,3 +92,13 @@ function startQuiz() {
     b3.addEventListener("click", chooseAnswer);
     b4.addEventListener("click", chooseAnswer);
 }
+
+function nextQuestion() {
+    if (currentQuestion >= myQuestions.length) {
+        clearInterval(countDown);
+        submitHighScore();
+    } else {
+        showQuestion(randomQuestions[currentQuestion]);
+    }
+}
+
