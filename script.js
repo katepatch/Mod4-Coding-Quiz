@@ -102,3 +102,19 @@ function nextQuestion() {
     }
 }
 
+function showQuestions(question) {
+    questions.innerText = question.question;
+
+    const options = myQuestions[currentQuestion].options
+    options.sort(() => Math.random() > .5 ? 1 : -1);
+
+    b1.textContent = options[0].text;
+    b2.textContent = options[1].text;
+    b3.textContent = options[2].text;
+    b4.textContent = options[3].text;
+
+    b1.value = options[0].correct;
+    b2.value = options[1].correct;
+    b3.value = options[2].correct;
+    b4.value = options[3].correct;
+}
