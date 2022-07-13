@@ -2,7 +2,7 @@ var start = document.getElementById("start");
 var quizQuestions = document.getElementById("quiz-questions");
 var questions = document.getElementById("questions");
 var answerButtons = document.getElementById("answer-buttons");
-var linkLeaderboard = document.getElementById("leader-board");
+var linkBoard = document.getElementById("leader-board");
 var home = document.getElementById("back");
 var clearScores = document.getElementById("clear");
 var highScoreSubmission = document.getElementById("highscore-submit");
@@ -76,3 +76,6 @@ var myQuestions = [
     },
 
 ]
+
+start.addEventListener("click", startQuiz);
+linkBoard.addEventListener("click", showLeaderboard);
