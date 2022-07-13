@@ -27,3 +27,52 @@ var submitButton = document.getElementById("submit-btn");
 const endHighScores = JSON.parse(localStorage.getItem("endHighScores")) || [];
 const maxHighScores = 10;
 const highScoresList = document.getElementById("high-scores");
+
+var myQuestions = [
+    {
+        question: "Commonly used data types DO NOT include:",
+            options: [
+                {text: "strings", correct: false},
+                {text: "booleans", correct: false},
+                {text: "alerts", correct: true},
+                {text: "numbers", correct: false},
+            ]
+    },
+    {
+        question: "The condition in an if / else statement is enclosed within ____.",
+        options: [
+            {text: "quotes", correct: false},
+            {text: "curly brackets", correct: false},
+            {text: "parentheses", correct: true},
+            {text: "square brackets": correct: false},
+        ]
+    },
+    {
+        question: "Arrays in JavaScript can be used to store ____.",
+        options: [
+            {text: "numbers and strings", correct: false},
+            {text: "other arrays", correct: false},
+            {text: "booleans", correct: false},
+            {text: "all of the above", correct: true},
+        ]
+    },
+    {
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+        options: [
+            {text: "commas", correct: false},
+            {text: "curly brackets", correct: false},
+            {text: "quotes", correct: true},
+            {text: "parentheses", correct: false},
+        ]
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        options: [
+            {text: "JavaScript", correct: false},
+            {text: "terminal / bash", correct: false},
+            {text: "for loops", correct: false},
+            {text: "console.log", correct: true},
+        ]
+    },
+    
+]
