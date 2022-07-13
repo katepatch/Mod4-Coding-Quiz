@@ -103,7 +103,7 @@ function nextQuestion() {
 }
 
 function showQuestions(question) {
-    questions.innerText = question.question;
+    questions.innerHTML = question.question;
 
     const options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
@@ -117,4 +117,15 @@ function showQuestions(question) {
     b2.value = options[1].correct;
     b3.value = options[2].correct;
     b4.value = options[3].correct;
+}
+
+function chooseAnswer(event) {
+    if (event.target.value == "true") {
+        currentQuestion++;
+        nextQuestion();
+    } else {
+        sec = sec -10;
+        currentQuestion++;
+        nextQuestion();
+    }
 }
