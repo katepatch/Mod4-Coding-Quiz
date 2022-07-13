@@ -103,7 +103,7 @@ function nextQuestion() {
 }
 
 function showQuestions(question) {
-    questions.innerHTML = question.question;
+    questions.textContent = question.question;
 
     const options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
@@ -128,4 +128,11 @@ function chooseAnswer(event) {
         currentQuestion++;
         nextQuestion();
     }
+}
+
+function submitHighScore() {
+    quizQuestions.classList.add("hide");
+    highScoreSubmission.classList.remove("hide");
+    timeScore.innerHTML = sec;
+    submitButton.addEventListener("click", highScoresList);
 }
