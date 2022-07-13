@@ -44,7 +44,7 @@ var myQuestions = [
             {text: "quotes", correct: false},
             {text: "curly brackets", correct: false},
             {text: "parentheses", correct: true},
-            {text: "square brackets": correct: false},
+            {text: "square brackets", correct: false},
         ]
     },
     {
@@ -74,5 +74,5 @@ var myQuestions = [
             {text: "console.log", correct: true},
         ]
     },
-    
+
 ]
