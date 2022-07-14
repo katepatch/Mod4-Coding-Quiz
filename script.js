@@ -15,7 +15,7 @@ var currentQuestion;
 var sec = 100;
 var countDown;
 var option;
-// var question;
+var question;
 var score;
 
 var b1 = document.getElementById('b1');
@@ -102,10 +102,10 @@ function nextQuestion() {
     }
 }
 
-function showQuestions(question) {
-    questionsEl.innerHTML = myQuestions[currentQuestion].question;
+function showQuestions(myQuestions) {
+    questionsEl.innertext = myQuestions[currentQuestion].question;
 
-    const options = myQuestions[currentQuestion].options
+    let options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
 
     b1.textContent = options[0].text;
@@ -182,5 +182,10 @@ function timer() {
     }
 }
 
+function reloadPage() {
+    location.reload();
+}
 
-
+function clearLeaderboard() {
+    localStorage.clear();
+}
