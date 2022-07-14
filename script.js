@@ -1,7 +1,7 @@
 var start = document.getElementById("start");
 var quizQuestions = document.getElementById("quiz-questions");
 const questionsEl = document.getElementById("questions");
-const optionsEl = document.getElementById("option")
+const optionsEl = document.getElementByClass("option")
 var answerButtons = document.getElementById("answer-buttons");
 var linkBoard = document.getElementById("leader-board");
 var home = document.getElementById("back");
@@ -13,7 +13,7 @@ var timeScore = document.getElementById("time-remaining");
 var randomQuestions;
 var currentQuestion;
 
-var sec = 100;
+var sec = 60;
 var countDown;
 var options;
 var question;
@@ -108,10 +108,10 @@ function nextQuestion() {
 function showQuestions(myQuestions) {
     questionsEl.innerText = myQuestions.question;
 
-    let options = myQuestions[currentQuestion].options
+    optionsEl = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
 
-    optionsEl.innerHTML = myQuestions.options
+    //optionsEl.innerText = myQuestions.options
 
     b1.textContent = options[0].text;
     b2.textContent = options[1].text;
