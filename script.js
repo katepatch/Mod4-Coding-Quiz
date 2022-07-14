@@ -1,6 +1,6 @@
 var start = document.getElementById("start");
 var quizQuestions = document.getElementById("quiz-questions");
-var questionsEl = document.getElementById("questions");
+const questionsEl = document.getElementById("questions");
 var answerButtons = document.getElementById("answer-buttons");
 var linkBoard = document.getElementById("leader-board");
 var home = document.getElementById("back");
@@ -104,7 +104,7 @@ function nextQuestion() {
 }
 
 function showQuestions(myQuestions) {
-    questionsEl.innerText = myQuestions[currentQuestion].question;
+    questionsEl.innerHTML = myQuestions.question;
 
     let options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
