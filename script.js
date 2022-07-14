@@ -1,6 +1,7 @@
 var start = document.getElementById("start");
 var quizQuestions = document.getElementById("quiz-questions");
 const questionsEl = document.getElementById("questions");
+const optionsEl = document.getElementById("option")
 var answerButtons = document.getElementById("answer-buttons");
 var linkBoard = document.getElementById("leader-board");
 var home = document.getElementById("back");
@@ -14,14 +15,14 @@ var currentQuestion;
 
 var sec = 100;
 var countDown;
-var option;
+var options;
 var question;
 var score;
 
-var b1 = document.getElementById('b1');
-var b2 = document.getElementById('b2');
-var b3 = document.getElementById('b3');
-var b4 = document.getElementById('b4');
+const b1 = document.getElementById('b1');
+const b2 = document.getElementById('b2');
+const b3 = document.getElementById('b3');
+const b4 = document.getElementById('b4');
 var submitButton = document.getElementById("submit-btn");
 
 const endHighScores = JSON.parse(localStorage.getItem("endHighScores")) || [];
@@ -80,6 +81,7 @@ var myQuestions = [
 start.addEventListener("click", startQuiz);
 linkBoard.addEventListener("click", showLeaderboard);
 
+
 function startQuiz() {
     countDown = setInterval(timer, 1000);
     start.classList.add("hide");
@@ -104,10 +106,12 @@ function nextQuestion() {
 }
 
 function showQuestions(myQuestions) {
-    questionsEl.innerHTML = myQuestions.question;
+    questionsEl.innerText = myQuestions.question;
 
     let options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
+
+    optionsEl.innerHTML = myQuestions.options
 
     b1.textContent = options[0].text;
     b2.textContent = options[1].text;
