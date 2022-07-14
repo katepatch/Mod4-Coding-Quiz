@@ -151,6 +151,27 @@ function highScoreLeaderboard() {
     showLeaderboard();
 }
 
+function showLeaderboard() {
+    quizQuestions.classList.add("hide");
+    correct.classList.add("hide");
+    incorrect.classList.add("hide");
+    highScoreSubmission.classList.add("hide");
+    viewHighScores.classList.remove("hide");
+    start.classList.add("hide");
+    home.classList.remove("hide");
+    clearScores.classList.remove("hide");
+
+    highScoresList.innerHTML = endHighScores
+    .map( score => {
+        return `<li class="high-score">${score.name} - ${score.score}<li>`;
+    })
+    .join("");
+
+    back.addEventListener("click", reloadPage);
+    clearScores.addEventListener("click", clearLeaderboard);
+    clearScores.addEventListener("click", reloadPage);
+}
+
 function timer() {
     document.getElementById("time-left").innerHTML = sec;
     sec--;
@@ -160,4 +181,6 @@ function timer() {
         showLeaderboard();
     }
 }
+
+
 
