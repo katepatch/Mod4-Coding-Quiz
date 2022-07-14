@@ -1,6 +1,6 @@
 var start = document.getElementById("start");
 var quizQuestions = document.getElementById("quiz-questions");
-var questions = document.getElementById("questions");
+var questionsEl = document.getElementById("questions");
 var answerButtons = document.getElementById("answer-buttons");
 var linkBoard = document.getElementById("leader-board");
 var home = document.getElementById("back");
@@ -15,7 +15,7 @@ var currentQuestion;
 var sec = 100;
 var countDown;
 var option;
-var question;
+// var question;
 var score;
 
 var b1 = document.getElementById('b1');
@@ -103,7 +103,7 @@ function nextQuestion() {
 }
 
 function showQuestions(question) {
-    questions.textContent = question.question;
+    questionsEl.innerHTML = myQuestions[currentQuestion].question;
 
     const options = myQuestions[currentQuestion].options
     options.sort(() => Math.random() > .5 ? 1 : -1);
@@ -137,6 +137,20 @@ function submitHighScore() {
     submitButton.addEventListener("click", highScoresList);
 }
 
+function highScoreLeaderboard() {
+    const score = {
+        score: sec,
+        name: initialInput.value
+    };
+    endHighScores.push(score);
+    endHighScores.sort( (a,b) => {
+        return b.score - a.score;
+    })
+    endHighScores.splice(maxHighScores);
+    localStorage.setItem("endHighScores", JSON.stringify(endHighScores));
+    showLeaderboard();
+}
+
 function timer() {
     document.getElementById("time-left").innerHTML = sec;
     sec--;
@@ -146,3 +160,4 @@ function timer() {
         showLeaderboard();
     }
 }
+
