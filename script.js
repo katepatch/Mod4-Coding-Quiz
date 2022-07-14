@@ -98,7 +98,7 @@ function nextQuestion() {
         clearInterval(countDown);
         submitHighScore();
     } else {
-        showQuestion(randomQuestions[currentQuestion]);
+        showQuestions(randomQuestions[currentQuestion]);
     }
 }
 
