@@ -87,6 +87,7 @@ function startQuiz() {
     currentQuestion = 0;
     quizQuestions.classList.remove("hide");
     nextQuestion();
+    showQuestions();
     b1.addEventListener("click", chooseAnswer);
     b2.addEventListener("click", chooseAnswer);
     b3.addEventListener("click", chooseAnswer);
